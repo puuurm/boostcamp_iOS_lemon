@@ -1,6 +1,6 @@
 # boostcamp_iOS_lemon
 
-### 	yang hee jung
+### 	Yang hee jung
 
 
 
