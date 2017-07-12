@@ -15,7 +15,11 @@ class WebViewController: UIViewController, WKUIDelegate {
     
     override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
+        
+        // frame을 .zero로 설정한 이유는??
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        
+        // uiDelegate의 역할은 무엇이길래 여기에 할당하였을까요?
         webView.uiDelegate = self
         view = webView
     }
@@ -23,9 +27,10 @@ class WebViewController: UIViewController, WKUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myURL = URL(string: "https://www.bignerdranch.com")
-        let myRequest = URLRequest(url: myURL!)
-        webView.load(myRequest)
+        if let myURL = URL(string: "https://www.bignerdranch.com") {
+            let myRequest = URLRequest(url: myURL)
+            webView.load(myRequest)
+        }
     }
     
     
