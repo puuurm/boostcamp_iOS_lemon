@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="41S-OM-oBI">
             <objects>
-                <viewController id="yoL-3N-op9" customClass="ViewController" customModule="LogIn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yoL-3N-op9" customClass="LogInViewController" customModule="LogIn" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ofC-Rl-YmB"/>
                         <viewControllerLayoutGuide type="bottom" id="Qp3-oh-yWg"/>
@@ -157,7 +157,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="112.5" height="30"/>
                                                 <state key="normal" title="Sign In"/>
                                                 <connections>
-                                                    <action selector="signIn:" destination="yoL-3N-op9" eventType="touchUpInside" id="dbG-t1-hQL"/>
+                                                    <action selector="SignIn:" destination="yoL-3N-op9" eventType="touchUpInside" id="e31-J5-okN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRz-Na-Ny2">
@@ -166,6 +166,7 @@
                                                     <color key="titleColor" red="0.98322493654822329" green="0.0" blue="0.10995464782592876" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="SignUp:" destination="yoL-3N-op9" eventType="touchUpInside" id="t4w-x7-zi7"/>
                                                     <segue destination="BYZ-38-t0r" kind="presentation" id="9hV-N4-7Du"/>
                                                 </connections>
                                             </button>
@@ -192,10 +193,6 @@
                             <constraint firstItem="Dwq-Ud-jiQ" firstAttribute="top" secondItem="ofC-Rl-YmB" secondAttribute="bottom" constant="15" id="yJH-Kn-pAg"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="idTextField" destination="n8H-vT-tpV" id="l0Y-Tf-7ef"/>
-                        <outlet property="pwTextField" destination="IjM-d2-Nrr" id="r0f-sH-iCS"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oaf-Kg-JhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
