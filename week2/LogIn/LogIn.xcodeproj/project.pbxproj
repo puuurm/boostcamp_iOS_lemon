@@ -12,7 +12,7 @@
 		C9166F9B1F15211900DCF3E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9166F991F15211900DCF3E9 /* Main.storyboard */; };
 		C9166F9D1F15211900DCF3E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9166F9C1F15211900DCF3E9 /* Assets.xcassets */; };
 		C9166FA01F15211900DCF3E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9166F9E1F15211900DCF3E9 /* LaunchScreen.storyboard */; };
-		C9166FCE1F19BA5100DCF3E9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9166FCD1F19BA5100DCF3E9 /* LogInViewController.swift */; };
+		C9166FD01F19C04F00DCF3E9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9166FCF1F19C04F00DCF3E9 /* LogInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		C9166F9C1F15211900DCF3E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9166F9F1F15211900DCF3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9166FA11F15211900DCF3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C9166FCD1F19BA5100DCF3E9 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		C9166FCF1F19C04F00DCF3E9 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +56,8 @@
 		C9166F941F15211900DCF3E9 /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
+				C9166FCF1F19C04F00DCF3E9 /* LogInViewController.swift */,
 				C9166F951F15211900DCF3E9 /* AppDelegate.swift */,
-				C9166FCD1F19BA5100DCF3E9 /* LogInViewController.swift */,
 				C9166F971F15211900DCF3E9 /* SignUpViewController.swift */,
 				C9166F991F15211900DCF3E9 /* Main.storyboard */,
 				C9166F9C1F15211900DCF3E9 /* Assets.xcassets */,
@@ -141,7 +141,7 @@
 			files = (
 				C9166F981F15211900DCF3E9 /* SignUpViewController.swift in Sources */,
 				C9166F961F15211900DCF3E9 /* AppDelegate.swift in Sources */,
-				C9166FCE1F19BA5100DCF3E9 /* LogInViewController.swift in Sources */,
+				C9166FD01F19C04F00DCF3E9 /* LogInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

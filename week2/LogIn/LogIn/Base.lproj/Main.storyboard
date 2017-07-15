@@ -157,7 +157,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="112.5" height="30"/>
                                                 <state key="normal" title="Sign In"/>
                                                 <connections>
-                                                    <action selector="SignIn:" destination="yoL-3N-op9" eventType="touchUpInside" id="e31-J5-okN"/>
+                                                    <action selector="signIn:" destination="yoL-3N-op9" eventType="touchUpInside" id="AAV-4L-3z1"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRz-Na-Ny2">
@@ -166,7 +166,7 @@
                                                     <color key="titleColor" red="0.98322493654822329" green="0.0" blue="0.10995464782592876" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="SignUp:" destination="yoL-3N-op9" eventType="touchUpInside" id="t4w-x7-zi7"/>
+                                                    <action selector="signUp:" destination="yoL-3N-op9" eventType="touchUpInside" id="fjf-vz-KOU"/>
                                                     <segue destination="BYZ-38-t0r" kind="presentation" id="9hV-N4-7Du"/>
                                                 </connections>
                                             </button>
@@ -193,6 +193,10 @@
                             <constraint firstItem="Dwq-Ud-jiQ" firstAttribute="top" secondItem="ofC-Rl-YmB" secondAttribute="bottom" constant="15" id="yJH-Kn-pAg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="idTextField" destination="n8H-vT-tpV" id="vIp-mp-f2e"/>
+                        <outlet property="pwTextField" destination="IjM-d2-Nrr" id="6LB-4U-PtH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oaf-Kg-JhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
