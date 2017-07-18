@@ -4,8 +4,9 @@
 
 교재 문제 해결하기 ( iOS Programming: Big Nerd Ranch Guide, 5/e )
 
-- Homepwner:  Chaper 9 
+- Homepwner:  Chapter 9 
   - Bronze Challenge : Sections
+- Homepwner: Chapter 10
 
 Project 
 
