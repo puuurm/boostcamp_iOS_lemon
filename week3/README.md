@@ -6,7 +6,14 @@
 
 - Homepwner:  Chapter 9 
   - Bronze Challenge : Sections
-- Homepwner: Chapter 10
+  - Silver Challenge: Constant Rows
+  - Gold Challenge: Customizing the Table
+- HomepwnerSecond: Chapter 10
+  - Bronze Challenge: Renaming the Delete Button
+  - Silver Challenge: Preventing Reordering
+  - Gold Challenge: Really Preventing Reordering
+- HomepwnerThird: Chapter 11
+  - Bronze Challenge: Cell Colors
 
 Project 
 
