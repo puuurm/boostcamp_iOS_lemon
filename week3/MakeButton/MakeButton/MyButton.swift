@@ -14,12 +14,12 @@ class MyButton: UIView, UIGestureRecognizerDelegate {
     private var backgroundImageView: UIImageView!
     
 
-    var textOnState: [UInt: String] = [UInt: String]()
-    var colorOnState: [UInt: UIColor] = [UInt: UIColor]()
+    private var textOnState: [Int: String] = [Int: String]()
+    private var colorOnState: [Int: UIColor] = [Int: UIColor]()
     
     /* UIControlState()로 생성된 기본값이 normal인지 모른다면 헷갈릴 수 있겠죠? 조금 더 명확히 써주는 것이 좋겠습니다 */
-    var state = UIControlState.normal {
-
+    // Completed!
+    private var state: StateOptions = .normal {
         didSet {
             updateButton()
         }
@@ -60,12 +60,8 @@ class MyButton: UIView, UIGestureRecognizerDelegate {
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
-
-        
-        /* 차후에 시간이 허락한다면 오토 레이아웃도 적용해 봅시다 */
-        self.textLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: self.frame.height))
-        backgroundImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: self.frame.height))
-
+        initImageView()
+        initLabel()
         
     }
     
@@ -73,16 +69,40 @@ class MyButton: UIView, UIGestureRecognizerDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-
-    func setTitle(_ title: String?, for state: UIControlState) {
-
+    /* 차후에 시간이 허락한다면 오토 레이아웃도 적용해 봅시다 */
+    // Completed!
+    func initLabel() {
+        textLabel = UILabel()
+        addSubview(textLabel)
+        
+        textLabel?.textAlignment = .center
+        textLabel?.translatesAutoresizingMaskIntoConstraints = false
+        textLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        textLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        textLabel?.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1).isActive = true
+        textLabel?.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1).isActive = true
+        
+        
+    }
+    func initImageView() {
+        backgroundImageView = UIImageView()
+        addSubview(backgroundImageView)
+        
+        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        backgroundImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        backgroundImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        backgroundImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        
+    }
+    
+    func setTitle(_ title: String?, for state: StateOptions) {
         textOnState[state.rawValue] = title
         updateButton()
     }
     
 
-    func setTitleColor(_ color: UIColor?, for state: UIControlState) {
-
+    func setTitleColor(_ color: UIColor?, for state: StateOptions) {
         colorOnState[state.rawValue] = color
         updateButton()
     }
@@ -95,19 +115,10 @@ class MyButton: UIView, UIGestureRecognizerDelegate {
         
     }
     func updateTitle() {
-
-        for (stateIndex, text) in textOnState {
-            if stateIndex == state.rawValue {
-                textLabel.text = text
-            }
-        }
+        textLabel.text = textOnState[state.rawValue]
     }
     func updateColor() {
-        for (stateIndex, color) in colorOnState {
-            if stateIndex == state.rawValue {
-                textLabel.textColor = color
-            }
-        }
+        textLabel.textColor = colorOnState[state.rawValue]
 
     }
     
