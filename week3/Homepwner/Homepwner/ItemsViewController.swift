@@ -96,6 +96,7 @@ class ItemsViewController: UITableViewController {
         
         let sumOfRows = tableView.numberOfRows(inSection: section)
         
+        /* 이 방법도 좋은 방법입니다만, 하단에 고정적인 내용을 보여주려면 더 좋은 방법은 없을까요? (꼭 row를 추가해야 한다고 생각할 필요는 없습니다) */
         // 현재 섹션의 총 행의 개수 (해당 섹션 아이탬 수 + 마지막 문구 한 개)와 현재 행의 인덱스 + 1 이 같다면, 그것은 마지막 행이다.
         if ( row + 1 == sumOfRows ) {
             cell.textLabel?.text = "No more items!"
