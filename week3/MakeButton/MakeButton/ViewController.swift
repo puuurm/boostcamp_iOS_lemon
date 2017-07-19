@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var myButton: MyButton!
+    var myButton2: MyButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +25,14 @@ class ViewController: UIViewController {
     }
     
     private func makeButton() {
-        let myButton = MyButton(frame: CGRect(x: self.view.frame.width/2-40, y: self.view.frame.height - 200, width: 80, height: 40))
+        myButton = MyButton(frame: CGRect(x: self.view.frame.width/2-100, y: self.view.frame.height - 300, width: 200, height: 50))
         
         // normal
         myButton.setTitle("normal", for: .normal)
         myButton.setTitleColor(UIColor.yellow, for: .normal)
         // normal & highlight
-        myButton.setTitle("highlight1", for: .highlighted)
-        myButton.setTitleColor(UIColor.white, for: .highlighted)
+        myButton.setTitle("highlight1", for: [.normal, .highlighted])
+        myButton.setTitleColor(UIColor.white, for: [.normal,.highlighted])
         // selected
         myButton.setTitle("selected", for: .selected)
         myButton.setTitleColor(UIColor.green, for: .selected)
@@ -39,22 +42,33 @@ class ViewController: UIViewController {
         
         myButton.setMyBackgroundColor(UIColor.black)
         
-        // myButton.addTarget(target: self, selector: #selector(Login))
+        myButton.addTarget(self, action: #selector(self.printTouchUpInside(_:)))
         view.addSubview(myButton)
         
-        let myButton2 = MyButton(frame: CGRect(x: self.view.frame.width/2-40, y: self.view.frame.height - 150, width: 80, height: 40))
+        myButton2 = MyButton(frame: CGRect(x: self.view.frame.width/2-100, y: self.view.frame.height - 250, width: 200, height: 50))
         
         myButton2.setTitle("Disable the button", for: .normal)
         myButton2.setTitle("Enable the button", for: .selected)
+        myButton2.addTarget(self, action: #selector(self.makeDisable(_:)))
         
         // myButton.addTarget(target: self, selector: #selector(makeDisable()))
         view.addSubview(myButton2)
     }
-    /*
-    private func makeDisable() {
-        if 
+    func makeDisable(_ sender: Any) {
+        if myButton2.isSelected {
+            myButton.isEnabled = true
+            
+        } else {
+            myButton.isEnabled = false
+        }
     }
-    */
+    
+    func printTouchUpInside(_ sender: Any) {
+        if myButton.isEnabled {
+            print("touch up inside")
+            print("button tapped")
+        }
+    }
     
 }
 
