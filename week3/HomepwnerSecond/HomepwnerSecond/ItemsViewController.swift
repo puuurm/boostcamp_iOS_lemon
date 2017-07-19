@@ -110,15 +110,12 @@ class ItemsViewController: UITableViewController {
     
     /* Cannot move last cell */
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        if indexPath.row == itemStore.allItems.count {
-            return false
-        }
-        return true
+        return indexPath.row != itemStore.allItems.count
     }
     
     /* Cannot delete last cell */
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return !(indexPath.row == itemStore.allItems.count)
+        return indexPath.row != itemStore.allItems.count
     }
     
     /*

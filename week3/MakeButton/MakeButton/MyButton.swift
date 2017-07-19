@@ -13,10 +13,11 @@ class MyButton: UIView {
     var textLabel: UILabel!
     var backgroundImageView: UIImageView!
     
-    var textOnState: [Int: String] = [Int: String]()
-    var colorOnState: [Int: UIColor] = [Int: UIColor]()
+    var textOnState: [UInt: String] = [UInt: String]()
+    var colorOnState: [UInt: UIColor] = [UInt: UIColor]()
     
-    var state = UIControlState() {
+    /* UIControlState()로 생성된 기본값이 normal인지 모른다면 헷갈릴 수 있겠죠? 조금 더 명확히 써주는 것이 좋겠습니다 */
+    var state = UIControlState.normal {
         didSet {
             updateButton()
         }
@@ -26,6 +27,8 @@ class MyButton: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        /* 차후에 시간이 허락한다면 오토 레이아웃도 적용해 봅시다 */
         self.textLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: self.frame.height))
         backgroundImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: self.frame.height))
         
@@ -39,12 +42,12 @@ class MyButton: UIView {
     }
     
     func setTitle(_ title: String?, for state: UIControlState) {
-        textOnState[Int(state.rawValue)] = title
+        textOnState[state.rawValue] = title
         updateButton()
     }
     
     func setTitleColor(_ color: UIColor?, for state: UIControlState) {
-        colorOnState[Int(state.rawValue)] = color
+        colorOnState[state.rawValue] = color
         updateButton()
     }
     func setMyBackgroundColor(_ color: UIColor) {
@@ -57,14 +60,14 @@ class MyButton: UIView {
     }
     func updateTitle() {
         for (stateIndex, text) in textOnState {
-            if stateIndex == Int(state.rawValue) {
+            if stateIndex == state.rawValue {
                 textLabel.text = text
             }
         }
     }
     func updateColor() {
         for (stateIndex, color) in colorOnState {
-            if stateIndex == Int(state.rawValue) {
+            if stateIndex == state.rawValue {
                 textLabel.textColor = color
             }
         }

@@ -65,6 +65,7 @@ class ItemsViewController: UITableViewController {
         cell.serialNumberLabel.text = item.serialNumber
         cell.valueLabel.text = "$\(item.valueInDollars)"
         /* Under 50: green, Same or over 50: red */
+        /* Cell 자체 색상을 변경하는 것 같던데요~ 그래도 괜찮습니다! */
         if item.valueInDollars < 50 {
             cell.valueLabel.textColor = UIColor.green
         } else {
