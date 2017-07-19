@@ -92,12 +92,12 @@ class MyButton: UIView, UIGestureRecognizerDelegate {
     }
     
     func setTitle(_ title: String?, for state: StateOptions) {
-        textOnState[Int(state.rawValue)] = title
+        textOnState[state.rawValue] = title
         updateButton()
     }
     
     func setTitleColor(_ color: UIColor?, for state: StateOptions) {
-        colorOnState[Int(state.rawValue)] = color
+        colorOnState[state.rawValue] = color
         updateButton()
     }
     func setMyBackgroundColor(_ color: UIColor) {
