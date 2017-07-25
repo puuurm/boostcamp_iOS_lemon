@@ -9,7 +9,18 @@
 import UIKit
 
 class RecordsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var closeButton: UIButton = UIButton()
+    
+    // 따로 함수로 빼는것 보다는 요렇게 바꿔보는건 어때요?
+    private lazy var closeButton: UIButton = { [unowned self] in
+        let closeButton = UIButton()
+        closeButton.setTitle("Close", for: .normal)
+        closeButton.setTitleColor(.white, for: .normal)
+        closeButton.backgroundColor = UIColor.red
+        closeButton.titleLabel?.font = closeButton.titleLabel?.font.withSize(20)
+        closeButton.addTarget(self, action: #selector(RecordsViewController.showMainView(_:)), for: .touchUpInside)
+        closeButton.addTarget(self, action: #selector(RecordsViewController.dismissView(_:)), for: .touchUpInside)
+        return closeButton
+    }()
     var resetButton: UIButton = UIButton()
     var recordBook: RecordBook!
     @IBOutlet var recordTableView: UITableView!
@@ -59,12 +70,6 @@ class RecordsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     
     func initCloseButton() {
-        closeButton.setTitle("Close", for: .normal)
-        closeButton.setTitleColor(.white, for: .normal)
-        closeButton.backgroundColor = UIColor.red
-        closeButton.titleLabel?.font = closeButton.titleLabel?.font.withSize(20)
-        closeButton.addTarget(self, action: #selector(RecordsViewController.showMainView(_:)), for: .touchUpInside)
-        closeButton.addTarget(self, action: #selector(RecordsViewController.dismissView(_:)), for: .touchUpInside)
         view.addSubview(closeButton)
         
         closeButton.titleLabel?.textAlignment = .center

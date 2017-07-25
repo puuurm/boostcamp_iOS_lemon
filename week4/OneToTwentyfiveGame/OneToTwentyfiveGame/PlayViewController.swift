@@ -10,6 +10,7 @@ import UIKit
 
 class PlayViewController: UIViewController {
     
+    // 여기 프로퍼티들도 RecordsViewController를 참고해보세요~
     var highRecordText: UILabel = UILabel()
     var highRecordTime: UILabel = UILabel()
     var timerLabel: UILabel = UILabel()
