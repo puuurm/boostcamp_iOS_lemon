@@ -17,6 +17,7 @@
 		C91671321F2602EF00DCF3E9 /* RecordBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91671311F2602EF00DCF3E9 /* RecordBook.swift */; };
 		C9390ACC1F26A1A100394162 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9390ACB1F26A1A100394162 /* RecordsViewController.swift */; };
 		C983845D1F26CC61007322FE /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C983845C1F26CC61007322FE /* RecordCell.swift */; };
+		C98384611F2708C4007322FE /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98384601F2708C4007322FE /* RecordsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C91671311F2602EF00DCF3E9 /* RecordBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordBook.swift; sourceTree = "<group>"; };
 		C9390ACB1F26A1A100394162 /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordsViewController.swift; path = ../RecordsViewController.swift; sourceTree = "<group>"; };
 		C983845C1F26CC61007322FE /* RecordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
+		C98384601F2708C4007322FE /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				C91670FB1F24FD3F00DCF3E9 /* AppDelegate.swift */,
 				C91670FD1F24FD3F00DCF3E9 /* ViewController.swift */,
+				C98384601F2708C4007322FE /* RecordsViewController.swift */,
 				C9390ACB1F26A1A100394162 /* RecordsViewController.swift */,
 				C916710D1F252A2A00DCF3E9 /* PlayViewController.swift */,
 				C91670FF1F24FD3F00DCF3E9 /* Main.storyboard */,
@@ -158,6 +161,7 @@
 				C91671301F26001D00DCF3E9 /* Record.swift in Sources */,
 				C91670FC1F24FD3F00DCF3E9 /* AppDelegate.swift in Sources */,
 				C9390ACC1F26A1A100394162 /* RecordsViewController.swift in Sources */,
+				C98384611F2708C4007322FE /* RecordsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
