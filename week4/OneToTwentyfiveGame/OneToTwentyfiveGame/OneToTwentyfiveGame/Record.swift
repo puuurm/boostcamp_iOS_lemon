@@ -13,9 +13,9 @@ class Record: NSObject {
     var startDate: Date
     var clearTime: String
     
-    init(name: String, startDate: Date, clearTime: String) {
+    init(name: String, clearTime: String) {
         self.name = name
-        self.startDate = startDate
+        self.startDate = Date()
         self.clearTime = clearTime
         super.init()
     }

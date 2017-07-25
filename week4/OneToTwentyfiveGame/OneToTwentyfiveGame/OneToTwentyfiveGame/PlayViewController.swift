@@ -28,7 +28,10 @@ class PlayViewController: UIViewController {
         super.viewDidLoad()
         makeView()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        highRecordTime.text = recordBook.updateRecord()
+    }
     func makeView(){
         initHighRecordText()
         initHighRecordTime()
@@ -214,7 +217,7 @@ class PlayViewController: UIViewController {
             currentIndex += 1
         }
         //btControl.showsTouchWhenHighlighted = false
-        if currentIndex == 25 {
+        if currentIndex == 5 {
             currentIndex = 0
             timer.invalidate()
             self.clearTime = timerLabel.text
@@ -232,12 +235,8 @@ class PlayViewController: UIViewController {
                     let clearTimeValue = self.clearTime else {
                         return
                 }
-                let newRecord = self.recordBook.createRecord(name: nameValue, startDate: self.startTime, clearTiem: clearTimeValue)
-                if let index = self.recordBook.allRecords.index(of: newRecord) {
-                    let indexPath = IndexPath(row: index, section: 0)
-                    let recordViewController = RecordsViewController()
-                    recordViewController.tableView.insertRows(at: [indexPath], with: .automatic)
-                }
+                self.recordBook.createRecord(name: nameValue, clearTiem: clearTimeValue)
+                self.highRecordTime.text = self.recordBook.updateRecord()
             })
             alertController.addAction(ok)
             
@@ -257,6 +256,8 @@ class PlayViewController: UIViewController {
         case "GameToHistory"?:
             let destinationController = segue.destination as! RecordsViewController
             destinationController.recordBook = self.recordBook
+            print("pass recordBook")
+            print(recordBook.allRecords.count)
         default: break
         }
     }

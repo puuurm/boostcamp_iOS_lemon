@@ -8,33 +8,55 @@
 
 import UIKit
 
-class RecordsViewController: UITableViewController {
+class RecordsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var closeButton: UIButton = UIButton()
     var resetButton: UIButton = UIButton()
     var recordBook: RecordBook!
+    @IBOutlet var recordTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
         // Do any additional setup after loading the view, typically from a nib.
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
+        recordTableView.contentInset = insets
+        recordTableView.scrollIndicatorInsets = insets
+        
+        recordTableView.delegate = self
+        recordTableView.dataSource = self
     }
+    
     func initView() {
         initCloseButton()
         initResetButton()
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recordBook.allRecords.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecordCell", for: indexPath) as! RecordCell
+        
         let record = recordBook.allRecords[indexPath.row]
         cell.nameLabel.text = record.name
         cell.timeLabel.text = "\(record.startDate)"
         cell.timerLabel.text = "\(record.clearTime)"
+        
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let record = recordBook.allRecords[indexPath.row]
+            recordBook.removeRecord(record: record)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
+    }
+
+    
     
     func initCloseButton() {
         closeButton.setTitle("Close", for: .normal)
