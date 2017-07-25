@@ -19,7 +19,10 @@ class PlayViewController: UIViewController {
     var historyButton: UIButton = UIButton()
     var twentyFiveButtons = [UIButton]()
     var twentyFiveButtonsStackView = UIStackView()
-    var nameTextField = UITextField()
+    var name: String?
+    var startTime: Date!
+    var clearTime: String?
+    var recordBook: RecordBook!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,6 +114,7 @@ class PlayViewController: UIViewController {
         historyButton.setTitleColor(.white, for: .normal)
         historyButton.backgroundColor = UIColor.red
         historyButton.titleLabel?.font = homeButton.titleLabel?.font.withSize(20)
+        historyButton.addTarget(self, action: #selector(PlayViewController.showHistory(_:)), for: .touchUpInside)
         view.addSubview(historyButton)
         
         historyButton.titleLabel?.textAlignment = .center
@@ -156,6 +160,8 @@ class PlayViewController: UIViewController {
     var seconds = 0
     
     func startGame(_ btControl: UIButton) {
+        self.startTime = Date()
+        seconds = 0
         playButton.alpha = 0
         giveRandomNumber()
         runTimer()
@@ -167,17 +173,21 @@ class PlayViewController: UIViewController {
             if numberSet.contains(randomValue) {
                 continue
             } else {
+                twentyFiveButtons[index].alpha = 1
                 twentyFiveButtons[index].setTitle("\(randomValue)", for: .normal)
                 twentyFiveButtons[index].titleLabel?.font = twentyFiveButtons[index].titleLabel?.font.withSize(20)
                 numberSet.append(randomValue)
+                
                 index += 1
             }
         }
+        numberSet.removeAll()
     }
     func runTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1/60, target: self,   selector: (#selector(PlayViewController.updateTimer)), userInfo: nil, repeats: true)
     }
     func updateTimer()  {
+        
         seconds += 1
         timerLabel.text = timeString(time: TimeInterval(seconds))
     }
@@ -207,19 +217,31 @@ class PlayViewController: UIViewController {
         if currentIndex == 25 {
             currentIndex = 0
             timer.invalidate()
+            self.clearTime = timerLabel.text
             playButton.alpha = 1
             let title = "Clear!"
             let message = "Enter your name"
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             
+            alertController.addTextField (configurationHandler: { (textField : UITextField!) -> Void in })
             let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             alertController.addAction(cancel)
-            let ok = UIAlertAction(title: "OK", style: .destructive, handler: nil)
+            let ok = UIAlertAction(title: "OK", style: .destructive, handler: { (action) -> Void in
+                self.name = alertController.textFields?[0].text
+                guard let nameValue = self.name,
+                    let clearTimeValue = self.clearTime else {
+                        return
+                }
+                let newRecord = self.recordBook.createRecord(name: nameValue, startDate: self.startTime, clearTiem: clearTimeValue)
+                if let index = self.recordBook.allRecords.index(of: newRecord) {
+                    let indexPath = IndexPath(row: index, section: 0)
+                    let recordViewController = RecordsViewController()
+                    recordViewController.tableView.insertRows(at: [indexPath], with: .automatic)
+                }
+            })
             alertController.addAction(ok)
-            present(alertController, animated: true, completion: nil)
             
-            //alertController.addTextField(configurationHandler: nil)
-            //alertController.textFields = nameTextField
+            present(alertController, animated: true, completion: nil)
         }
     }
     
@@ -227,5 +249,24 @@ class PlayViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    func showHistory(_ btControl: UIButton) {
+        performSegue(withIdentifier: "GameToHistory", sender: btControl)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "GameToHistory"?:
+            let destinationController = segue.destination as! RecordsViewController
+            destinationController.recordBook = self.recordBook
+        default: break
+        }
+    }
+    /*
+    func presentHistory(_ btControl: UIButton) {
+        let recordViewController = RecordsViewController()
+
+        recordViewController.recordBook = self.recordBook
+        self.present(recordViewController, animated: true, completion: nil)
+    }
+    */
 }
 

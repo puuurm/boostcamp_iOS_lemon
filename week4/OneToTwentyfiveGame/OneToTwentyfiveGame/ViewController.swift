@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var recordBook: RecordBook!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +20,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "ShowPlay"?:
+            let destinationController = segue.destination as! PlayViewController
+            destinationController.recordBook = self.recordBook
+        case "ShowHistory"?:
+            let destinationController = segue.destination as! RecordsViewController
+            destinationController.recordBook = self.recordBook
+        default: break
+        }
+    }
 }
 

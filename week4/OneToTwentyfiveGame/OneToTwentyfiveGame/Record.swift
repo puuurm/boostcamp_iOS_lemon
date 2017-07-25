@@ -10,12 +10,12 @@ import UIKit
 
 class Record: NSObject {
     var name: String
-    var startTime: Date
-    var clearTime: Date
+    var startDate: Date
+    var clearTime: String
     
-    init(name: String, startTime: Date, clearTime: Date) {
+    init(name: String, startDate: Date, clearTime: String) {
         self.name = name
-        self.startTime = startTime
+        self.startDate = startDate
         self.clearTime = clearTime
         super.init()
     }

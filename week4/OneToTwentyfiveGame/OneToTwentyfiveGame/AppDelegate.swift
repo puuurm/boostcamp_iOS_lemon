@@ -16,6 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let recordBook = RecordBook()
+        
+        let navController = window!.rootViewController as! UINavigationController
+        let viewController = navController.topViewController as! ViewController
+        viewController.recordBook = recordBook
         return true
     }
 

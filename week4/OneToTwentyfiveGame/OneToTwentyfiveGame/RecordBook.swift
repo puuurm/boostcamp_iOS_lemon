@@ -11,7 +11,9 @@ import UIKit
 class RecordBook {
     var allRecords = [Record]()
     
-    func createRecord(record: Record) {
-        allRecords.append(record)
+    @discardableResult func createRecord(name: String, startDate: Date, clearTiem: String) -> Record {
+        let newRecord = Record(name: name, startDate: startDate, clearTime: clearTiem)
+        allRecords.append(newRecord)
+        return newRecord
     }
 }
