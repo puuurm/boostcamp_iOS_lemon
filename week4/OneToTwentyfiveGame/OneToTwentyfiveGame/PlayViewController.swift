@@ -20,7 +20,6 @@ class PlayViewController: UIViewController {
     var twentyFiveButtons = [UIButton]()
     var twentyFiveButtonsStackView = UIStackView()
     var name: String?
-    var startTime: Date!
     var clearTime: String?
     var recordBook: RecordBook!
     
@@ -163,7 +162,9 @@ class PlayViewController: UIViewController {
     var seconds = 0
     
     func startGame(_ btControl: UIButton) {
-        self.startTime = Date()
+        historyButton.isEnabled = false
+        historyButton.titleLabel?.alpha = 0.5
+        
         seconds = 0
         playButton.alpha = 0
         giveRandomNumber()
@@ -237,6 +238,8 @@ class PlayViewController: UIViewController {
                 }
                 self.recordBook.createRecord(name: nameValue, clearTiem: clearTimeValue)
                 self.highRecordTime.text = self.recordBook.updateRecord()
+                self.historyButton.isEnabled = true
+                self.historyButton.titleLabel?.alpha = 1
             })
             alertController.addAction(ok)
             
