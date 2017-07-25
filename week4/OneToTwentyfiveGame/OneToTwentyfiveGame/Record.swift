@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Record: NSObject {
+class Record: NSObject, NSCoding {
     var name: String
     var startDate: Date
     var clearTime: String
@@ -17,6 +17,20 @@ class Record: NSObject {
         self.name = name
         self.startDate = Date()
         self.clearTime = clearTime
+        super.init()
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: "name")
+        aCoder.encode(startDate, forKey: "startDate")
+        aCoder.encode(clearTime, forKey: "clearTime")
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        name = aDecoder.decodeObject(forKey: "name") as! String
+        startDate = aDecoder.decodeObject(forKey: "startDate") as! Date
+        clearTime = aDecoder.decodeObject(forKey: "clearTime") as! String
+        
         super.init()
     }
 }

@@ -14,6 +14,18 @@ class RecordBook {
             allRecords.sort { $0.clearTime < $1.clearTime }
         }
     }
+    let recordArchiveURL: URL = {
+        let documentsDirectories = FileManager.default.urls(for: .documentDirectory , in: .userDomainMask)
+        let documentDirectory = documentsDirectories.first!
+        return documentDirectory.appendingPathComponent("records.archive")
+        
+    }()
+    
+    init() {
+        if let archivedRecords = NSKeyedUnarchiver.unarchiveObject(withFile: recordArchiveURL.path) as? [Record] {
+            allRecords = archivedRecords
+        }
+    }
     @discardableResult func createRecord(name: String, clearTiem: String) -> Record {
         let newRecord = Record(name: name, clearTime: clearTiem)
         allRecords.append(newRecord)
@@ -32,5 +44,10 @@ class RecordBook {
         }
         return "- --:--:--"
         
+    }
+    
+    func saveChanges() -> Bool {
+        print("Saving items to: \(recordArchiveURL.path)")
+        return NSKeyedArchiver.archiveRootObject(allRecords, toFile: recordArchiveURL.path)
     }
 }
