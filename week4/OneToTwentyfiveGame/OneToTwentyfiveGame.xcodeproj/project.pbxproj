@@ -111,6 +111,7 @@
 				TargetAttributes = {
 					C91670F71F24FD3F00DCF3E9 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = V9TZ6H4V4N;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -282,6 +283,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = V9TZ6H4V4N;
 				INFOPLIST_FILE = OneToTwentyfiveGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompony.OneToTwentyfiveGame;
@@ -294,6 +296,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = V9TZ6H4V4N;
 				INFOPLIST_FILE = OneToTwentyfiveGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompony.OneToTwentyfiveGame;
