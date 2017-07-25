@@ -218,7 +218,7 @@ class PlayViewController: UIViewController {
             currentIndex += 1
         }
         //btControl.showsTouchWhenHighlighted = false
-        if currentIndex == 5 {
+        if currentIndex == 25 {
             currentIndex = 0
             timer.invalidate()
             self.clearTime = timerLabel.text
