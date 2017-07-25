@@ -8,6 +8,10 @@
 
 import UIKit
 
+/* 줄바꿈(내려쓰기)도 코딩에 중요한 습관 중 하나입니다. 메서드 사이사이, 구문 사이사이 줄바꿈에도 신경쓰면 훨씬 깔끔한 코드가 될 것입니다.
+ 통상적인 줄바꿈을 따라해 보아도 좋고, 자신만의 규칙을 세워두고 지켜보아도 좋습니다.
+ 중요해 보이지 않을 수 있지만, 사소한 변화가 큰 변화를 가져옵니다. */
+
 class ItemsViewController: UITableViewController {
     
     var itemStore: ItemStore!
