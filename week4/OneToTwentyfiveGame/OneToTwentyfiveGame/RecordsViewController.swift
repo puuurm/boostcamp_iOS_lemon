@@ -39,6 +39,11 @@ class RecordsViewController: UIViewController {
         resetButton.setTitleColor(.white, for: .normal)
         resetButton.backgroundColor = UIColor.red
         resetButton.titleLabel?.font = resetButton.titleLabel?.font.withSize(20)
+        resetButton.addTarget(
+            self,
+            action: #selector(RecordsViewController.buttonAlertReset(_:)),
+            for: .touchUpInside
+        )
         return resetButton
     }()
     
@@ -69,6 +74,18 @@ class RecordsViewController: UIViewController {
         resetButton.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor).isActive = true
         resetButton.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         resetButton.widthAnchor.constraint(equalTo: closeButton.widthAnchor).isActive = true
+    }
+    
+    func buttonAlertReset(_ btControl: UIButton) {
+        let ac = UIAlertController(title: "Really?", message: "", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "NO", style: .cancel, handler: nil)
+        ac.addAction(cancel)
+        let reset = UIAlertAction(title: "YES", style: .destructive, handler: { (action) -> Void in
+            self.recordBook.allRecords.removeAll()
+            self.recordTableView.reloadData()
+        } )
+        ac.addAction(reset)
+        present(ac, animated: true, completion: nil)
     }
     
     func showMainView(_ btControl: UIButton) {

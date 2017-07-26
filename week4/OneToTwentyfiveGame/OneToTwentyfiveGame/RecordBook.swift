@@ -9,7 +9,7 @@
 import UIKit
 
 class RecordBook {
-    var allRecords = [Record]() {
+    open var allRecords = [Record]() {
         didSet {
             allRecords.sort { $0.clearTime < $1.clearTime }
         }
