@@ -29,6 +29,7 @@ class RecordBook {
     @discardableResult func createRecord(name: String, clearTiem: String) -> Record {
         let newRecord = Record(name: name, clearTime: clearTiem)
         allRecords.append(newRecord)
+        //self.saveChanges()
         return newRecord
     }
     
