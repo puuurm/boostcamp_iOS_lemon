@@ -17,6 +17,10 @@
 		C9B824161F2CB56200514899 /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B824151F2CB56200514899 /* FlickrAPI.swift */; };
 		C9B824181F2CD6A900514899 /* PhotoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B824171F2CD6A900514899 /* PhotoStore.swift */; };
 		C9B8241A1F2D243C00514899 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B824191F2D243C00514899 /* Photo.swift */; };
+		C9B8241C1F2D832900514899 /* PhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8241B1F2D832900514899 /* PhotoDataSource.swift */; };
+		C9B8241E1F2D898700514899 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8241D1F2D898700514899 /* PhotoCollectionViewCell.swift */; };
+		C9B824201F2DB02B00514899 /* PhotoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8241F1F2DB02B00514899 /* PhotoInfoViewController.swift */; };
+		C9B824221F2DB14200514899 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B824211F2DB14200514899 /* ImageStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		C9B824151F2CB56200514899 /* FlickrAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrAPI.swift; sourceTree = "<group>"; };
 		C9B824171F2CD6A900514899 /* PhotoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStore.swift; sourceTree = "<group>"; };
 		C9B824191F2D243C00514899 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		C9B8241B1F2D832900514899 /* PhotoDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDataSource.swift; sourceTree = "<group>"; };
+		C9B8241D1F2D898700514899 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		C9B8241F1F2DB02B00514899 /* PhotoInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoInfoViewController.swift; sourceTree = "<group>"; };
+		C9B824211F2DB14200514899 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageStore.swift; path = ../../../../Documents/chapter15/HomepwnerThird/HomepwnerThird/ImageStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +116,10 @@
 				C9B824151F2CB56200514899 /* FlickrAPI.swift */,
 				C9B824191F2D243C00514899 /* Photo.swift */,
 				C9B824171F2CD6A900514899 /* PhotoStore.swift */,
+				C9B8241B1F2D832900514899 /* PhotoDataSource.swift */,
+				C9B8241D1F2D898700514899 /* PhotoCollectionViewCell.swift */,
+				C9B8241F1F2DB02B00514899 /* PhotoInfoViewController.swift */,
+				C9B824211F2DB14200514899 /* ImageStore.swift */,
 				C9B823E91F2C8DA500514899 /* Main.storyboard */,
 				C9B823EC1F2C8DA500514899 /* Assets.xcassets */,
 				C9B823EE1F2C8DA500514899 /* LaunchScreen.storyboard */,
@@ -271,6 +283,10 @@
 				C9B824161F2CB56200514899 /* FlickrAPI.swift in Sources */,
 				C9B824141F2C9C5B00514899 /* PhotosViewController.swift in Sources */,
 				C9B824181F2CD6A900514899 /* PhotoStore.swift in Sources */,
+				C9B8241C1F2D832900514899 /* PhotoDataSource.swift in Sources */,
+				C9B8241E1F2D898700514899 /* PhotoCollectionViewCell.swift in Sources */,
+				C9B824221F2DB14200514899 /* ImageStore.swift in Sources */,
+				C9B824201F2DB02B00514899 /* PhotoInfoViewController.swift in Sources */,
 				C9B823E61F2C8DA500514899 /* AppDelegate.swift in Sources */,
 				C9B8241A1F2D243C00514899 /* Photo.swift in Sources */,
 			);
@@ -519,6 +535,7 @@
 				C9B8240C1F2C8DA500514899 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C9B8240D1F2C8DA500514899 /* Build configuration list for PBXNativeTarget "PhotoramaTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +544,7 @@
 				C9B8240F1F2C8DA500514899 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C9B824101F2C8DA500514899 /* Build configuration list for PBXNativeTarget "PhotoramaUITests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +553,7 @@
 				C9B824121F2C8DA500514899 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
