@@ -14,6 +14,8 @@ class Photo {
     let authorNickname: String
     let dateTaken: String
     let imageURL: URL
+    
+    // open 으로 지정한 이유는??
     open let thumbImageURL: URL
     
     var thumbnailImage: UIImage?

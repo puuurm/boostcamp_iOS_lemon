@@ -25,6 +25,8 @@ class LogInViewController: UIViewController {
         let parameterDictionary = ["email" : email, "password" : password]
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        
+        // Application/json -> application/json 대소문자 주의
         request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
         guard let httpBody = try? JSONSerialization.data(withJSONObject: parameterDictionary, options: []) else {
             return
