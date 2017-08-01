@@ -10,7 +10,6 @@ import UIKit
 
 class ImageBoardCell: UITableViewCell {
     @IBOutlet var thumbnailImageView: UIImageView!
-    
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var authorNicknameLabel: UILabel!
     @IBOutlet var createDateLabel: UILabel!

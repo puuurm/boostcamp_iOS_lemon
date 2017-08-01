@@ -10,20 +10,19 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet var detailImageView: UIImageView!
-    @IBOutlet var nicknameLabel: UILabel!
-    @IBOutlet var descriptionLabel: UILabel!
-    @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var titleLabel: UINavigationItem!
-    
+    @IBOutlet var titleNaviItem: UINavigationItem!
+    @IBOutlet var authorNickname: UILabel!
+    @IBOutlet var dateCreated: UILabel!
+    @IBOutlet var descriptionTextView: UITextView!
+    @IBOutlet var imageView: UIImageView!
     var photo: Photo!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        detailImageView.image = photo.image
-        nicknameLabel.text = photo.authorNickname
-        descriptionLabel.text = photo.description
-        dateLabel.text = photo.dateTaken
-        titleLabel.title = photo.title
+        imageView.image = photo.image
+        titleNaviItem.title = photo.title
+        authorNickname.text = photo.authorNickname
+        dateCreated.text = photo.dateTaken
+        descriptionTextView.text = photo.description
     }
 }
