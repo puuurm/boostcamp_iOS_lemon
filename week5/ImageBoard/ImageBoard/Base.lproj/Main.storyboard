@@ -24,13 +24,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oj9-Pj-Qm6">
-                                <rect key="frame" x="16" y="35" width="343" height="30"/>
+                                <rect key="frame" x="16" y="79" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PNj-LN-F0M">
-                                <rect key="frame" x="16" y="73" width="343" height="30"/>
+                                <rect key="frame" x="16" y="117" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -163,7 +163,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wJR-pk-kfv" id="X3n-KW-a44">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="85"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="84.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qdX-V0-HQ0">
@@ -220,7 +220,10 @@
                             <constraint firstItem="iG2-As-A0L" firstAttribute="leading" secondItem="eQG-Rw-q6d" secondAttribute="leadingMargin" id="tni-5I-FeD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="e8A-LF-t3h"/>
+                    <navigationItem key="navigationItem" id="e8A-LF-t3h">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="k9Z-r5-vz2"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="Csh-oM-PXG"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageBoardTableView" destination="iG2-As-A0L" id="nrL-TL-0f8"/>
                     </connections>
@@ -324,7 +327,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KMt-JW-Uvf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1877.5999999999999" y="1505.3973013493255"/>
+            <point key="canvasLocation" x="2164" y="1504"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JWP-dm-6ig">
+            <objects>
+                <viewController id="8uW-Mz-wTf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vx8-e0-4ue"/>
+                        <viewControllerLayoutGuide type="bottom" id="NXz-Z9-yK4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pS8-vr-0rv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nOn-Fn-1dw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2164" y="818"/>
         </scene>
         <!--Nav Controller-->
         <scene sceneID="RIq-Rt-toq">
