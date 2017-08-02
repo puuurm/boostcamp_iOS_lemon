@@ -46,6 +46,7 @@ class ImageBoardTableViewController: UIViewController {
         }
     }
     
+    // 외부에서도 쓰이는 메서드인가요?
     func getImage() {
         print(photos.count)
         let urlString = "https://ios-api.boostcamp.connect.or.kr"

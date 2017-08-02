@@ -16,6 +16,15 @@ class CreateImageBoardViewController: UIViewController {
     
     let imagePickerController = UIImagePickerController()
     
+/*
+    lazy var imagePickerController: UIImagePickerController = {
+        let picker: UIImagePickerController = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        return picker
+    }()
+  */
+    
     let urlString = "https://ios-api.boostcamp.connect.or.kr/image"
     
     override func viewDidLoad() {
@@ -29,6 +38,8 @@ class CreateImageBoardViewController: UIViewController {
         }
         //var request = URLRequest(url: url)
         //request.httpMethod = "POST"
+        
+        // UUID를 쓴 이유는?? UUID는 앱 삭제후 다시 실행하면 변경될 수 있습니다. 그것을 떠나서 UUID를 쓴 이유는 뭘까요?
         let boundary = "Boundary-\(UUID().uuidString)"
         //request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         //request.httpBody =
@@ -46,6 +57,7 @@ class CreateImageBoardViewController: UIViewController {
     
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
         
+        // imagePickerController를 계속 사용할 것이라면 프로퍼티를 다르게 만들어 봅시다.
         imagePickerController.sourceType = .photoLibrary
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)

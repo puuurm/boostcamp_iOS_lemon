@@ -78,6 +78,8 @@ class LogInViewController: UIViewController {
         }
         if email.isEmpty || password.isEmpty {
             let title = "모든 항목을 입력해주세요."
+            
+            // 네이밍
             let ac = UIAlertController(title: title, message: "", preferredStyle: .alert)
             let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
             ac.addAction(ok)
